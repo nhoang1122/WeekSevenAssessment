@@ -1,0 +1,40 @@
+//RUNTIME//
+
+//extraLargeArray//
+
+extraLargeArray.length = 100000
+
+doublerAppend(extraLargeArray) = 5.11615 ms
+doublerInsert(extraLargeArray) = 1.909810574 s
+
+//largeArray//
+
+largeArray.length = 10000
+
+doublerAppend(largeArray) = 878.664 μs
+doublerInsert(largeArray) = 19.49183 ms
+
+//mediumArray//
+
+mediumArray.length = 1000
+
+doublerAppend(mediumArray) = 189.546 μs
+doublerInsert(mediumArray) = 239.81 μs
+
+//smallArray//
+
+smallArray.length = 100
+
+doublerAppend(smallArray) = 133.396 μs
+doublerInsert(smallArray) = 65.875 μs
+
+//tinyArray//
+
+tinyArray.length = 10
+
+doublerAppend(tinyArray) = 118.73 μs
+doublerInsert(tinyArray) = 60.419 μs
+
+//PARAGRAPH//
+
+Unshift is a JavaScript method that inserts a variable in front of an array and Push is a JavaScript method that inserts a variable at the end of an array. Both methods do ultimately the same thing, which is add a variable to an array. In terms of scaling and runtime, both produce different results. When trying to insert 10 variables into an array, the unshift method takes 60.419 μs while the push method takes 118.73 μs. The unshift runs in HALF the time it takes to run the push method. When trying to insert 100 variables into an array, the unshift method takes 65.875 μs while the push method takes 133.396 μs. Once again, the unshift method runs in HALF the time. But after trying 1000, things start to get interesting. When trying to insert 1000 variables, the unshift runs in 239.81 μs while the push runs in 189.546 μs. The push method wins in terms of run-time and scaling. Now let's try 10000 and 100000. When trying to insert 10000 variables into an array, the unshift method takes 19.49183 ms while the push method takes 878.664 μs. Lastly, when trying to insert 100000 variables into an array, the unshift method takes 1.909810574 sec while the push method takes 5.11615 ms. If we are inserting 10 to 100 variables in an array, the unshift methods runs in half the run-time compared to the push method. Once we start trying to push over 1000 variables into an array, the push method runs about TWICE as fast as the unshift method. Even after trying to insert 10000 and 100000 variables into an array, the unshift method stills comes out on top in terms of run-time and scaling. In conclusion, in the long run the push method is better in terms of scaling and run-time.
